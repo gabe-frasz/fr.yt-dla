@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 apt update
-pkg install python ffmpeg termux-api
+pkg install termux-api python ffmpeg jq
 pip install yt-dlp
 
 mkdir ~/bin
