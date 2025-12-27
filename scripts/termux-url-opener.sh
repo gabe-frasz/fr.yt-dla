@@ -37,7 +37,7 @@ esac
 mkdir -p "$audio_output_dir"
 mkdir -p "$video_output_dir"
 
-if [ $option_index -lt 3 ]; then
+if [ $option_index < 3 ]; then
     cd "$audio_output_dir"
 else
     cd "$video_output_dir"
