@@ -5,5 +5,5 @@ pkg install python ffmpeg termux-api
 pip install yt-dlp
 
 mkdir ~/bin
-cp ./termux-url-opener.sh ~/bin/termux-url-opener
+cp ~/fr.yt-dla/scripts/termux-url-opener.sh ~/bin/termux-url-opener
 chmod +x ~/bin/termux-url-opener
