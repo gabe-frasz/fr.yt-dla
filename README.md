@@ -5,7 +5,7 @@ Free audio/video downloader for mobile using yt-dlp and termux.
 ## TODO
 
 - [ ] Identify video by title instead of url
-- [ ] Save audio with right metadata
+- [x] Save audio with right metadata
 - [ ] Make notifications real time
 - [ ] Add support for video only downloads
 - [ ] Option to change the default output folder
