@@ -1,0 +1,24 @@
+#!/bin/env bash
+
+# This script is used to first install the dependencies and configure the yt-dla
+
+pkg update -y
+pkg install -y git termux-api python ffmpeg jq rust binutils
+pip install yt-dlp spotdl
+
+termux-setup-storage
+
+mkdir "$HOME/bin"
+mkdir -p "$HOME/storage/shared/Music"
+mkdir -p "$HOME/storage/shared/Movies"
+
+target_dir="$HOME/fr.yt-dla"
+
+if [ -d "$target_dir" ]; then
+  rm -rf "$target_dir"
+fi
+
+git clone https://github.com/gabe-frasz/fr.yt-dla.git "$HOME"
+
+cp "$HOME/fr.yt-dla/scripts/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
+chmod +x "$HOME/bin/termux-url-opener"
