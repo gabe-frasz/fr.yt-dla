@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 
 # This script is used as the entry point for Termux
 # It is called when the user shares a URL using the Termux app

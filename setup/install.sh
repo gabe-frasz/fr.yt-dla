@@ -8,7 +8,7 @@ pip install yt-dlp spotdl
 
 termux-setup-storage
 
-mkdir "$HOME/bin"
+mkdir -p "$HOME/bin"
 mkdir -p "$HOME/storage/shared/Music"
 mkdir -p "$HOME/storage/shared/Movies"
 
@@ -18,7 +18,8 @@ if [ -d "$target_dir" ]; then
   rm -rf "$target_dir"
 fi
 
-git clone https://github.com/gabe-frasz/fr.yt-dla.git "$HOME"
+git clone https://github.com/gabe-frasz/fr.yt-dla.git "$target_dir"
 
 cp "$HOME/fr.yt-dla/setup/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
 chmod +x "$HOME/bin/termux-url-opener"
+chmod +x "$HOME/fr.yt-dla/main.sh"
