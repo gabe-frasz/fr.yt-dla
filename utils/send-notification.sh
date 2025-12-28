@@ -5,21 +5,30 @@
 function ytdla_send_notification() {
   local id=1
   local title="yt-dla"
+  local content=""
+  local priority="low"
 
   case "$2" in
     "start")
-      termux-notification --id $id --t $title -c"Downloading: $1"
+      content="Downloading: $1"
       ;;
     "success")
-      termux-notification --id $id --t $title -c"Successfully downloaded: $1"
+      content="Successfully downloaded: $1"
       ;;
     "error")
-      termux-notification --id $id --t $title -c"Error trying to download: $1" --priority high
+      content="Error trying to download: $1"
+      priority="high" # Só vibra/toca se der erro
       ;;
     *)
-      echo "Unknown notification type: $2"
+      content="Unknown status: $2"
       ;;
   esac
+
+  termux-notification \
+    --id "$id" \
+    --title "$title" \
+    --content "$content" \
+    --priority "$priority"
 }
 
 export -f ytdla_send_notification
