@@ -5,5 +5,5 @@ git pull -q
 
 pip install -U yt-dlp spotdl --no-warn-script-location > /dev/null 2>&1
 
-cp "$HOME/fr.yt-dla/scripts/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
+cp "$HOME/fr.yt-dla/setup/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
 chmod +x "$HOME/bin/termux-url-opener"

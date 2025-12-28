@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source "$HOME/fr.yt-dla/scripts/config.sh"
-source "$HOME/fr.yt-dla/scripts/utils.sh"
+source "$HOME/fr.yt-dla/utils/config.sh"
+source "$HOME/fr.yt-dla/utils/send-notification.sh"
 
 url=$1
 
@@ -64,7 +64,7 @@ fi
     send_notification "$url" "error"
   fi
 
-  bash "$HOME/fr.yt-dla/scripts/auto-update.sh" >> "$log_file" 2>&1
+  bash "$HOME/fr.yt-dla/utils/auto-update.sh" >> "$log_file" 2>&1
 
   echo "[$(date)] END: $url ($dir_type)" >> "$log_file"
 

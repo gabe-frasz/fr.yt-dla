@@ -20,5 +20,5 @@ fi
 
 git clone https://github.com/gabe-frasz/fr.yt-dla.git "$HOME"
 
-cp "$HOME/fr.yt-dla/scripts/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
+cp "$HOME/fr.yt-dla/setup/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
 chmod +x "$HOME/bin/termux-url-opener"
