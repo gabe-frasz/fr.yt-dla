@@ -7,7 +7,6 @@ export video_output_dir="$HOME/storage/shared/Movies"
 
 # format: option label | downloader name | downloader arguments | directory type
 download_options=(
-  "Music - Classic MP3|spotdl|--output \"{title}.{ext}\"|AUDIO"
   "Audio - Classic MP3|yt-dlp|-x --audio-format mp3 --audio-quality 0 --add-metadata --embed-thumbnail|AUDIO"
   "Audio - Modern M4A|yt-dlp|-f ba[ext=m4a] --extract-audio --add-metadata --embed-thumbnail|AUDIO"
   "Video - Highest (Max)|yt-dlp|-f bv*+ba/b|VIDEO"

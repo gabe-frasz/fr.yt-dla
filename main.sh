@@ -30,40 +30,27 @@ fi
 
 (
   termux-wake-lock
-  send_notification "$url" "start"
+  ytdla_send_notification "$url" "start"
 
   echo "[$(date)] START: $url ($dir_type)" >> "$log_file"
 
-  downloader_name=$(get_downloader_name_from_option "$option_index")
   downloader_args=$(get_downloader_args_from_option "$option_index")
 
-  case "$downloader_name" in
-    "spotdl")
-      spotdl "$url" $downloader_args >> "$log_file" 2>&1
-      ;;
-    "yt-dlp")
-      # --no-mtime: use today date instead of video upload date
-      # --restrict-filenames: remove special chars and spaces
-      # -o: output template
-      yt-dlp $downloader_args \
-        --no-mtime \
-        --restrict-filenames \
-        --exec "termux-media-scan {}" \
-        -o "%(title)s.%(ext)s" \
-        "$url" >> "$log_file" 2>&1
-      ;;
-    *)
-      echo "[$(date)] Unknown downloader: $downloader_name. Exiting..." >> "$log_file"
-      send_notification "$url" "error"
-      exit 1
-      ;;
-  esac
+  # --no-mtime: use today date instead of video upload date
+  # --restrict-filenames: remove special chars and spaces
+  # -o: output template
+  yt-dlp $downloader_args \
+    --no-mtime \
+    --restrict-filenames \
+    --exec "termux-media-scan {}" \
+    -o "%(title)s.%(ext)s" \
+    "$url" >> "$log_file" 2>&1
 
   status=$?
   if [ $status -eq 0 ]; then
-    send_notification "$url" "success"
+    ytdla_send_notification "$url" "success"
   else
-    send_notification "$url" "error"
+    ytdla_send_notification "$url" "error"
   fi
 
   bash "$HOME/fr.yt-dla/utils/auto-update.sh" >> "$log_file" 2>&1

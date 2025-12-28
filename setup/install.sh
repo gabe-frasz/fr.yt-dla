@@ -3,8 +3,8 @@
 # This script is used to first install the dependencies and configure the yt-dla
 
 pkg update -y
-pkg install -y git termux-api python ffmpeg jq rust binutils
-pip install yt-dlp spotdl
+pkg install -y git termux-api python ffmpeg jq
+pip install yt-dlp
 
 termux-setup-storage
 

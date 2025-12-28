@@ -2,7 +2,7 @@
 
 # $1 = file_identifier
 # $2 = notification_type
-function send_notification() {
+function ytdla_send_notification() {
   local id=1
   local title="yt-dla"
 
@@ -21,3 +21,5 @@ function send_notification() {
       ;;
   esac
 }
+
+export -f ytdla_send_notification
