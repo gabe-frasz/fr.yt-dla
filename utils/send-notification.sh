@@ -1,12 +1,14 @@
 #!/bin/env bash
 
-# $1 = file_identifier
-# $2 = notification_type
+# $1 = file identifier
+# $2 = notification type
 function ytdla_send_notification() {
-  local id=1
+  local id
   local title="yt-dla"
-  local content=""
+  local content
   local priority="low"
+
+  id=$(echo "$1" | md5sum | cut -c 1-10)
 
   case "$2" in
     "start")
@@ -17,7 +19,7 @@ function ytdla_send_notification() {
       ;;
     "error")
       content="Error trying to download: $1"
-      priority="high" # Só vibra/toca se der erro
+      priority="high"
       ;;
     *)
       content="Unknown status: $2"
