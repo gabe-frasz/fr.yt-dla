@@ -11,3 +11,5 @@ Free audio/video downloader for mobile using yt-dlp and termux.
 - [ ] Option to change the default output folder
 - [ ] Smart rename
 - [ ] Smart playlist detection 
+- [ ] Add support for other downloaders
+  - [ ] spotdl
