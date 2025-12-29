@@ -3,6 +3,7 @@
 # This script is meant to be run inside a termux environment
 
 source "$HOME/fr.yt-dla/utils/config.sh"
+source "$HOME/fr.yt-dla/utils/get-video-title.sh"
 source "$HOME/fr.yt-dla/utils/send-notification.sh"
 
 url=$1
@@ -30,9 +31,11 @@ fi
 
 (
   termux-wake-lock
-  ytdla_send_notification "$url" "start"
 
-  echo "[$(date)] START: $url ($dir_type)" >> "$log_file"
+  video_title=$(get_video_title "$url")
+
+  ytdla_send_notification "$video_title" "start"
+  echo "[$(date)] START: $video_title ($dir_type)" >> "$log_file"
 
   downloader_args=$(get_downloader_args_from_option "$option_index")
 
@@ -48,9 +51,9 @@ fi
 
   status=$?
   if [ $status -eq 0 ]; then
-    ytdla_send_notification "$url" "success"
+    ytdla_send_notification "$video_title" "success"
   else
-    ytdla_send_notification "$url" "error"
+    ytdla_send_notification "$video_title" "error"
   fi
 
   bash "$HOME/fr.yt-dla/utils/auto-update.sh" >> "$log_file" 2>&1
