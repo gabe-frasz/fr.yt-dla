@@ -14,12 +14,12 @@ mkdir -p "$HOME/storage/shared/Music"
 mkdir -p "$HOME/storage/shared/Movies"
 
 target_dir="$HOME/fr.yt-dla"
+[[ -d "$target_dir" ]] && rm -rf "$target_dir"
 
-if [ -d "$target_dir" ]; then
-  rm -rf "$target_dir"
-fi
+start_script="$HOME/bin/termux-url-opener"
+[[ -f "$start_script" ]] && rm "$start_script"
 
 git clone https://github.com/gabe-frasz/fr.yt-dla.git "$target_dir"
 
-cp "$HOME/fr.yt-dla/setup/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
-chmod +x "$HOME/bin/termux-url-opener"
+cp "$target_dir/termux-url-opener.sh" "$start_script"
+chmod +x "$start_script"
