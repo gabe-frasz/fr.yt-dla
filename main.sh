@@ -31,7 +31,6 @@ for entry in "${download_options[@]}"; do
     download_options_str+=",$label"
   fi
 done
-download_options_str="$options_str"
 
 ytdla_get_video_title() {
   local url="$1"
