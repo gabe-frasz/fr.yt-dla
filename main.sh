@@ -25,7 +25,7 @@ download_options_str=""
 for entry in "${download_options[@]}"; do
   label="${entry%%|*}"
 
-  if [ -z "$options_str" ]; then
+  if [[ -z "$download_options_str" ]]; then
     download_options_str="$label"
   else
     download_options_str+=",$label"
