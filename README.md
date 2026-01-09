@@ -2,6 +2,12 @@
 
 Free audio/video downloader for mobile using yt-dlp and termux.
 
+## Installation
+
+```bash
+curl -s https://raw.githubusercontent.com/gabe-frasz/fr.yt-dla/main/install.sh | bash
+```
+
 ## TODO
 
 - [x] Identify video by title instead of url
