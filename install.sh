@@ -9,6 +9,7 @@ pip install yt-dlp
 termux-setup-storage
 
 mkdir -p "$HOME/bin"
+mkdir -p "$HOME/.tmp"
 mkdir -p "$HOME/storage/shared/Music"
 mkdir -p "$HOME/storage/shared/Movies"
 
@@ -22,4 +23,3 @@ git clone https://github.com/gabe-frasz/fr.yt-dla.git "$target_dir"
 
 cp "$HOME/fr.yt-dla/setup/termux-url-opener.sh" "$HOME/bin/termux-url-opener"
 chmod +x "$HOME/bin/termux-url-opener"
-chmod +x "$HOME/fr.yt-dla/main.sh"

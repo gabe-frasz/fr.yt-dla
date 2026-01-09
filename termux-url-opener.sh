@@ -6,7 +6,7 @@
 main_script="$HOME/fr.yt-dla/main.sh"
 
 if [ -f "$main_script" ]; then
-    "$main_script" "$@"
+    bash "$main_script" "$@"
 else
     echo "Error: main.sh not found"
     exit 1
